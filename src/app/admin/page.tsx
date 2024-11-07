@@ -13,11 +13,17 @@ async function getSalesData() {
     _sum: { pricePaidInCents: true },
     _count: true,
   })
+  await wait(2000)
+
 
   return {
     amount: (data._sum.pricePaidInPence || 0) / 100,
     numberOfSales: data._count,
   }
+}
+
+function wait(duration: number) {
+  return new Promise(resolve => setTimeout(resolve,duration))
 }
 
 async function getUserData() {
