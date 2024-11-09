@@ -10,7 +10,7 @@ import { formatCurrency, formatNumber } from "@/lib/formatters"
 
 async function getSalesData() {
   const data = await db.order.aggregate({
-    _sum: { pricePaidInCents: true },
+    _sum: { pricePaidInPence: true },
     _count: true,
   })
   await wait(2000)

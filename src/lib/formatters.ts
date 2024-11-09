@@ -4,7 +4,7 @@ const CURRENCY_FORMATTER = new Intl.NumberFormat("en-UK", {
   minimumFractionDigits: 0,
 })
 
-export function FormatCurrency(amount: number) {
+export function formatCurrency(amount: number) {
   return CURRENCY_FORMATTER.format(amount)
 }
 
